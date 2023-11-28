@@ -16,12 +16,14 @@ public class AnimalController {
         }
         return species;
     }
-
+    /*
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     String handeIllegalArgumentException(IllegalArgumentException ex) {
         return new ErrorMessage("Only 'dog' is allowed").toString();
     }
+
+     */
 
     @GetMapping
     String getAllAnimals() {

@@ -12,7 +12,7 @@ public class CarController {
     @GetMapping("{brand}")
     String getCarBrand(@PathVariable String brand) {
         if (!brand.equals("porsche")) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Only 'porsche' allowed");
         }
         return brand;
     }
@@ -20,8 +20,9 @@ public class CarController {
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     String handleIllegalArgumentException(IllegalArgumentException ex) {
-        return new ErrorMessage("Only 'porsche' allowed").toString();
+        return new ErrorMessage(ex.getMessage()).toString();
     }
+
 
     @GetMapping
     String getAllCars() {
