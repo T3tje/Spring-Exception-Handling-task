@@ -43,6 +43,4 @@ class CarControllerTest {
         assertTrue(resolvedException instanceof IllegalArgumentException);
         assertEquals("Only 'porsche' allowed", resolvedException.getMessage());
     }
-
-
 }
